@@ -10114,7 +10114,7 @@ body#dummybodyid .diigolet .cItem span.keywordStrong{float:none;font-weight:bold
     <h2 class="title is-3 "> Comparisons on Short Video Generation</h2>
   </div>
   <br>
-
+  <h2 class="title is-4 "> Qualitative Comparisons </h2>
   <div class="columns is-centered has-text-centered">
   <p> We compare our approach with <a href='https://sihyun-yu.github.io/digan/'>DIGAN (Yu et al. 2022)</a> and <a href='https://songweige.github.io/projects/tats/'>TATS (Ge et al. 2022)</a> with randomly generated samples.
   </p>
@@ -10226,6 +10226,24 @@ body#dummybodyid .diigolet .cItem span.keywordStrong{float:none;font-weight:bold
 <!-- taichi -->
 <!-- Comparison short   -->
 
+<!-- Short Quanti -->
+<section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fourth-fifths">
+        <h2 class="title is-4 "> Quantitative Comparisons </h2>
+        <!-- <div class="content has-text-justified"> -->
+          <p>
+            We compare the short video generation performance among various approaches on Sky Time-lapse, UCF-101, and TaiChi datasets.</p>
+          <p> Our approach achieves <b>state-of-the-art performance</b> under a higher spatial resolution.</p>
+          <br>
+          <img src="assets/compare_short_quanti.png" class="img-responsive" alt="scales">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Short Quanti -->  
+
 <!-- Demo Video -->
 <!-- <section class="section">
   <div class="container is-max-desktop">
@@ -10256,6 +10274,7 @@ body#dummybodyid .diigolet .cItem span.keywordStrong{float:none;font-weight:bold
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3 "> Comparisons on Long Video Generation </h2>
+          <h2 class="title is-4 "> Qualitative Comparisons </h2>
           <div class="content has-text-justified">
 
             <div class="columns is-centered has-text-centered">
@@ -10307,6 +10326,25 @@ body#dummybodyid .diigolet .cItem span.keywordStrong{float:none;font-weight:bold
       </div>
     </div>
 </section>
+
+<!-- Long Quanti -->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-third-fifths">
+      <h2 class="title is-4 "> Quantitative Comparisons </h2>
+      <!-- <div class="content has-text-justified"> -->
+        <p>
+          We compare our approach's long video generation performance (1024 frames) with <a href='https://songweige.github.io/projects/tats/'>TATS (Ge et al. 2022)</a> on UCF-101 and Sky Time-lapse.
+        </p>
+        <p> Our approach surpasses TATS by a large margin with a higher spatial resolution. (The default sampling method is DDPM.  * indicates DDIM sampling)</p>
+        <br>
+        <img src="assets/compare_long_quanti.png" class="img-responsive" alt="scales">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Long Quanti -->  
+
   <!-- Demo Video -->
   
   <!-- <section class="section" id="Citaton">
@@ -10331,12 +10369,11 @@ body#dummybodyid .diigolet .cItem span.keywordStrong{float:none;font-weight:bold
   <div class="container content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-@misc{he2022lvdm,
+@article{he2022lvdm,
   title={Latent Video Diffusion Models for High-Fidelity Video Generation with Arbitrary Lengths},
   author={Yingqing He and Tianyu Yang and Yong Zhang and Ying Shan and Qifeng Chen},
   year={2022},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV}
+  journal={arXiv preprint arXiv:2211.13221},
   }
 </code></pre>
   </div>
