@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ScaleCrafter: Tuning-free Higher-Resolution Visual Generation with Diffusion Models">
+  <meta property="og:title" content="ScaleCrafter: Tuning-free Higher-Resolution Visual Generation with Diffusion Models"/>
+  <meta property="og:description" content="ScaleCrafter: Tuning-free Higher-Resolution Visual Generation with Diffusion Models"/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="static/images/carousel1.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="ScaleCrafter: Tuning-free Higher-Resolution Visual Generation with Diffusion Models">
+  <meta name="twitter:description" content="ScaleCrafter: Tuning-free Higher-Resolution Visual Generation with Diffusion Models">
+  <meta name="twitter:image" content="static/images/carousel1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ScaleCrafter</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  
+
+</head>
+<body>
+
+
+  <section class="hero" style="height: 100vh; display: flex; flex-direction: column; justify-content: center;;">
+    <div class="hero-body">
+      <h4 class="title publication-title" style="text-align: center; font-size: 41px">
+        ScaleCrafter: Tuning-free Higher-Resolution Visual Generation <br>
+        with Diffusion Models
+      </h4>
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="is-size-5 publication-authors" style="text-align: center; font-size: x-small; margin-top: -45px;">
+      <!-- Paper authors -->
+      <span class="author-block">
+        <a href="https://github.com/YingqingHe" target="_blank">Yingqing He</a><sup>* 1</sup>
+      </span>
+      <span class="author-block">
+        <a href="https://menghanxia.github.io/" target="_blank">Shaoshu Yang</a><sup>* 2</sup>
+      </span>
+      <span class="author-block">
+        <a href="#" target="_blank">Haoxin Chen</a><sup>3</sup>
+      </span>
+      <span class="author-block">
+        <a href="http://vinthony.github.io/" target="_blank">Xiaodong Cun</a><sup>3</sup>
+      </span>
+      <span class="author-block">
+        <a href="" target="_blank">Menghan Xia</a><sup>3</sup>
+      </span>
+      <span class="author-block">
+        <a href="https://yzhang2016.github.io" target="_blank">Yong Zhang</a><sup># 3</sup>
+      </span>
+      <span class="author-block">
+        <a href="https://xinntao.github.io/" target="_blank">Xintao Wang</a><sup>3</sup>
+      </span>
+      <span class="author-block">
+        <a href="#" target="_blank">Ran He</a><sup>2</sup>
+      </span>
+      <span class="author-block">
+        <a href="https://doubiiu.github.io/" target="_blank">Qifeng Chen</a><sup># 1</sup>
+      </span>
+      <span class="author-block">
+        <a href="https://scholar.google.com/citations?hl=zh-CN&user=4oXBp9UAAAAJ" target="_blank">Ying Shan</a><sup>3</sup>
+      </span>
+    </div>
+    <div class="is-size-5 publication-authors" style="text-align: center; font-size: x-small; ">
+      <span class="author-block">
+        <sup>1</sup> Hong Kong University of Science and Technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <sup>2</sup> Chinese Academy of Sciences  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <sup>3</sup> Tencent AI Lab  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <br>
+        (<sup>*</sup> Equal Contribution &nbsp;&nbsp; <sup>#</sup> Corresponding Author)
+    </div>
+    <!-- <video autoplay muted controls="" loop="" style="height: 75vh; margin: auto; text-align: center;  margin-left: 50px; margin-right: 50px;"> <source src="videos-2k/0189_randk2-seed135.mp4" type="video/mp4"></video> -->
+    <div id="carousel" class="carousel carousel-vid" style="overflow: hidden; height:100vh">
+      <div class="img-txt" style="height:75vh">
+        <img src="images/sdxl/4096x4096/000.png" alt="图片" style="height:75vh">
+        <p>Generated image with resolution of <span style="color:#974EC3">4096 x 4096</span>. 
+          <br><span style="font-size: small;">Input: “Spring Magnolia and Thistle bouquet. Featuring bronze magnolia leaves, woodland greeneries, pussywillow, blush, scarlet and pink peonies, cream roses, sea holly thistle and cream, gold and navy ribbons”</span></p>
+      </div>
+      <div class="vid-txt">
+        <video autoplay muted controls="" loop="" dth="1000px">
+          <source src="videos-2k/0189_randk2-seed135.mp4" type="video/mp4">
+        </video>
+        <p>Generated video with resolution of <span style="color:#974EC3">2048 x 1152</span>. 
+          <br><span style="font-size: small;">Input: “Aerial autumn forest with a river in the mountains”</span></p>
+      </div>
+      
+    </div>
+    <!-- <p style="text-align: center; margin-bottom: 100px; "> Generated video of <i>“Aerial autumn forest with a river in the mountains"</i> of resolution <span style="color:#974EC3">2048 x 1152</span> 
+    (with a latent video diffusion model trained on <span style="color:#974EC3">1024 x 576</span>). </p> -->
+  </section>
+
+
+<section class="hero is-small">
+  <div class="page">
+    <div class="hero-body" style="width: 80vw; margin: auto">
+      <div class="content has-text-justified">
+        <hr>
+        <p style="text-align: center;"> Generate an <b>image</b> of <i>“A panda is surfing in the universe” of resolution</i> <span style="color:#974EC3">1024 x 1024</span> 
+          using SD 2.1 trained on <span style="color:#974EC3">512 x 512</span></p>
+        <table style="margin: 0 auto; width: 100%">
+          <tr>
+            <td style="width: 20%;"><img src="images/compare-1024/directinf-00001-A-panda-is-surfing-in-the-universe.-seed51.jpg" alt="图片"></td>
+            <td style="width: 20%;"><img src="images/compare-1024/attnsf-00001-A-panda-is-surfing-in-the-universe.-seed51.jpg" alt="图片"></td>
+            <td style="width: 20%;"><img src="images/compare-1024/multi-A-panda-is-surfing-in-the-universe.jpg" alt="图片"></td>
+            <td style="width: 20%;"><img src="images/compare-1024/sync-sample_seed_000051.png" alt="图片"></td>
+            <td style="width: 20%;"><img src="images/compare-1024/ours-A-panda-is-surfing-in-the-universe.-seed51.jpg" alt="图片"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 500; width: 20%;">1. Direct Inference</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">2. Scaling Attention</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">3. MultiDiffusion</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">4. SyncDiffusion</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">5. <span style="font-weight: 1000;">Ours</span></td>
+          </tr>
+        </table>
+        <br>
+        <p style="text-align: center;"> Generate a <b>video</b> of <i>“An astronaut is waving his hands on the moon"</i> of resolution <span style="color:#974EC3">1024 x 640</span> 
+          <br>using a latent video diffusion model trained on <span style="color:#974EC3">512 x 320</span> </p>
+        <table style="margin: 0 auto;">
+          <tr>
+            <td style="width: 33%;"><video autoplay muted controls="" loop=""> <source src="compare-videos/sdori-0000_randk0-seed123_000.mp4" type="video/mp4"></video></td>
+            <td style="width: 33%;"><video autoplay muted controls="" loop=""> <source src="compare-videos/attnsf-0000_randk0-seed123_000.mp4" type="video/mp4"></video></td>
+            <td style="width: 33%;"><video autoplay muted controls="" loop=""> <source src="compare-videos/0205.mp4" type="video/mp4"></video></td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 500;">1. Direct Inference</td>
+            <td style="text-align: center; font-weight: 500;">2. Scaling Attention</td>
+            <td style="text-align: center; font-weight: 500;">3. <span style="font-weight: 1000;">Ours</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+    <br>
+    <div  style="background-color: #ececec;">
+    <br>
+    <div class="container-small">
+      <h2 class="title is-3"><strong>Abstract</h2>
+      <p style="font-size: 14px;">
+        In this work, we investigate the capability of generating images from pre-trained diffusion models at much higher resolutions than the training image sizes. 
+        In addition, the generated images should have arbitrary image aspect ratios. 
+        When generating images directly at a higher resolution, 1024 x 1024, with the pre-trained Stable Diffusion using training images of resolution 512 x 512, 
+        we observe persistent problems of object repetition and unreasonable object structures. 
+        Existing works for higher-resolution generation, such as attention-based and joint-diffusion approaches, cannot well address these issues. 
+        As a new perspective, we examine the structural components of the U-Net in diffusion models and identify the crucial cause as the limited perception field of convolutional kernels. 
+        Based on this key observation, we propose a simple yet effective re-dilation that can dynamically adjust the convolutional perception field during inference. 
+        We further propose the dispersed convolution and noise-damped classifier-free guidance, which can enable ultra-high-resolution image generation (e.g., 4096 x 4096). 
+        Notably, our approach does not require any training or optimization. 
+        Extensive experiments demonstrate that our approach can address the repetition issue well and achieve state-of-the-art performance on higher-resolution image synthesis, 
+        especially in texture details. 
+        Our work also suggests that a pre-trained diffusion model trained on low-resolution images can be directly used for high-resolution visual generation without further tuning, 
+        which may provide insights for future research on ultra-high-resolution image and video synthesis. 
+      </p>
+    </div>
+    <br>
+  </div>
+
+  
+</section>
+
+<br>
+<section class="hero is-small">
+  <!-- <div style="background-color:#FAF3F0;"> -->
+    <h2 class="title is-3"><strong>Results</h2>
+  <div class="hero-body">
+      <div class="content has-text-justified">
+        <h3 class="title is-4"><strong>Higher-Resolution Synthsized Images with SD XL</h3>
+        <p style="text-align: center"> Utilizing a pretrained model trained on resolution <span style="color: #974EC3;">1024 x 1024</span>, our method can generate images with resolution up to with <span style="color: #974EC3;">4096 x 4096</span> <i style="color:#ac354b">without training/optimization</i>. </p>
+        <div id="carousel" class="carousel">
+          <div class="img-txt">
+            <img src="images/sdxl/4096x4096/000.png" alt="图片">
+            <p>Resolution: 4096x4096; Prompt: “Miniature house with plants in the potted area, hyper realism, dramatic ambient lighting, high detail”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x4096/Close up of a pair of vibrant koi fish swim upstream, surmounting a waterfall, oil painting style.jpg" alt="图片">
+            <p>Resolution: 4096x4096; Prompt: “Close up of a pair of vibrant koi fish swim upstream, surmounting a waterfall, oil painting style”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x4096/North sunset in Norway. Stunning sea view from mountains. Beautiful bay in evening sunlight. Lofoten islands landscape..jpg" alt="图片">
+            <p>Resolution: 4096x4096; Prompt: “North sunset in Norway. Stunning sea view from mountains. Beautiful bay in evening sunlight. Lofoten islands landscape.”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x2048/A cherry blossom tree in full bloom amidst an arctic tundra showering petals on a polar bear.jpg" alt="图片">
+            <p>Resolution: 4096x2048; Prompt: “A cherry blossom tree in full bloom amidst an arctic tundra showering petals on a polar bear”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x2048/baby succulents from ikea interior pinterest plants cacti and flora. Black Bedroom Furniture Sets. Home Design Ideas.jpg" alt="图片">
+            <p>Resolution: 4096x2048; Prompt: “baby succulents from ikea interior pinterest plants cacti and flora. Black Bedroom Furniture Sets. Home Design Ideas”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x2048/Handmade Watercolor Painting, home decor .jpg" alt="图片">
+            <p>Resolution: 4096x2048; Prompt: “Handmade Watercolor Painting, home decor”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x2048/Placemats Sunflower Summer Landscape Heat Stain Resistant Non-Slip Place Mats for Kitchen Dining Table 12 x 18 Inch 4 Pc.jpg" alt="图片">
+            <p>Resolution: 4096x2048; Prompt: “Placemats Sunflower Summer Landscape Heat Stain Resistant Non-Slip Place Mats for Kitchen Dining Table 12 x 18 Inch 4 Pc”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/4096x2048/Spring Magnolia and Thistle bouquet. Featuring bronze magnolia leaves, woodland greeneries, pussywillow, blush, scarlet and pink peonies.jpg" alt="图片">
+            <p>Resolution: 4096x2048; Prompt: “Spring Magnolia and Thistle bouquet. Featuring bronze magnolia leaves, woodland greeneries, pussywillow, blush, scarlet and pink peonies, cream roses, sea holly thistle and cream, gold and navy ribbons..jpg”</p>
+          </div>
+          <div class="img-txt">
+            <img src="images/sdxl/2048x2048/16 Inch Anime The Jungle Book Backpack For Teenagers Boys Girls School Bags Travel Bag Children School Backpacks Gift.jpg" alt="图片">
+            <p>Resolution: 2048x2048; Prompt: “16 Inch Anime The Jungle Book Backpack For Teenagers Boys Girls School Bags Travel Bag Children School Backpacks Gift”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div  style="background-color: #ececec;">
+      <div class="hero-body">
+        <br>
+        <h3 class="title is-4"><strong>Higher-Resolution Synthsized Videos with Latent Video Diffusion Models</h3>
+        <p style="text-align: center"> Utilizing a pretrained model trained on resolution <span style="color: #974EC3;">512 x 320</span>, 
+          our method can generate videos of <span style="color: #974EC3;">1024 x 640</span> resolution <i style="color:#ac354b">without training/optimization</i>. </p>
+          <div id="carousel" class="carousel carousel-vid">
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0011.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “Ironman is fighting against the enemy, big fire in the background, photorealistic, 4k”</p>
+          </div>
+
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0042.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “A solemn tortoise slowly ambles along, carrying its home on its back.”</p>
+          </div>
+
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0044.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “A charming raccoon stealthily rummages through a homeowner's trash can.”</p>
+          </div>
+
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0157.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “A panda playing on a swing set”</p>
+          </div>
+
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0176.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “Close up of grapes on a rotating table. High Definition.”</p>
+          </div>
+
+          <!-- <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0188.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “A girl is looking at the camera smiling. High Definition.”</p>
+          </div> -->
+
+          <!-- <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0205.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “An astronaut is waving his hands on the moon”</p>
+          </div> -->
+
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0207.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “A fat rabbit wearing a purple robe walking through a fantasy landscape.”</p>
+          </div>
+
+          <div class="vid-txt">
+            <video autoplay muted controls="" loop="" width="1000px" height="1000px">
+              <source src="videos/0208.mp4" type="video/mp4">
+            </video>
+            <p>Resolution: 1024x640; Prompt: “Teddy bear walking down 5th Avenue, front view, beautiful sunset, close up, high definition, 4k.”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="hero-body">
+      <br>
+      <h3 class="title is-4"><strong>Higher-Resolution Synthsized Images with SD 2.1</h3>
+      <p style="text-align: center"> Utilizing a pretrained model trained on resolution of <span style="color: #974EC3;">512 x 512</span>, 
+        whlie our method can generate images with resolution up to with <span style="color: #974EC3;">2048 x 2048</span> <i style="color:#ac354b">without training/optimization</i>. </p>
+      <div id="carousel" class="carousel">
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x2048/292-rank0-iter29-HDR-Image-of-Yosemite-Falls.jpg" alt="图片">
+          <p>Resolution: 2048x2048; Prompt: “HDR Image of Yosemite Falls”</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x2048/7-rank0-iter3-Maine-Coon_seed56_sample2.jpg" alt="图片">
+          <p>Resolution: 2048x2048; Prompt: "Maine Coon"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x2048/13-rank0-iter1-Picture-the-sky,-stones,-Norway,-Mountain-Sunrice.jpg" alt="图片">
+          <p>Resolution: 2048x2048; Prompt: “Picture the sky, stones, Norway, Mountain Sunrice”</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x2048/27-rank1-iter2-winter-sunset-lighthouse-snow-iceland-oru-2015-snaefellsnes-.jpg" alt="图片">
+          <p>Resolution: 2048x2048; Prompt: “winter sunset lighthouse snow iceland”</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/00001-A-corgi-sits-on-a-beach-chair-on-a-beautiful-beach,-with-palm-trees-behind,-high-details.-seed51.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: “A corgi sits on a beach chair on a beautiful beach, with palm trees behind, high details"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/00005-A-car-in-a-garden,-with-a-lake-and-Eiffel-Tower-seed58.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "A car in a garden, with a lake and Eiffel Tower”</p>
+        </div>
+        <!-- <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/1-rank0-iter0-poster-of-a-mechanical-cute-cat..jpg" alt="图片">
+          <p>“poster of a mechanical cute cat”</p>
+        </div> -->
+        <!-- <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/10-rank0-iter3-Maine-Coon_seed56_sample13.jpg" alt="图片">
+          <p>“Maine Coon”</p> -->
+        <!-- </div> -->
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/11-rank1-iter3-a-photo-of-wonder-woman_seed57_sample3.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "a photo of wonder woman"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/14-rank1-iter4-The-winding-Great-Wall-of-China-in-autumn_seed57_sample0.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "The winding Great Wall of China in autumn"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/3-rank2-iter0-A-Cute-Puppy-with-wings,-Cartoon-Drawings,-high-details_seed58_sample18.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "A Cute Puppy with wings, Cartoon Drawings, high details"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/6-rank0-iter5-A-photo-of-a-raccoon-wearing-an-astronaut-helmet,-looking-ou.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "A photo of a raccoon wearing an astronaut helmet, looking out"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/6-rank2-iter1-A-Cute-Puppy-with-wings,-in-sky,-photorealistic,-high-detail_seed58_sample12.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "A Cute Puppy with wings, in sky, photorealistic, high detail"</p>
+        </div>
+        <!-- <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/6-rank2-iter1-A-Cute-Puppy-with-wings,-in-sky,-photorealistic,-high-detail_seed58_sample4.jpg" alt="图片">
+          <p>"A Cute Puppy with wings, in sky, photorealistic, high detail"</p>
+        </div> -->
+        <!-- <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/6-rank2-iter1-A-Cute-Puppy-with-wings,-in-sky,-photorealistic,-high-detail_seed58_sample5.jpg" alt="图片">
+          <p>"A Cute Puppy with wings, in sky, photorealistic, high detail"</p>
+        </div> -->
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x1024/8-rank1-iter2-Sushi-Roll-on-a-wooden-table_seed57_sample17.jpg" alt="图片">
+          <p>Resolution: 2048x1024; Prompt: "Sushi Roll on a wooden table"</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/1024x1024/00002-photo-of-a-cat-holding-a-pineapple-seed52.jpg" alt="图片">
+          <p>Resolution: 1024x1024; Prompt: “photo of a cat holding a pineapple”</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/1024x1024/00014-A-rabbit-is-skateboarding-in-Time-Square-seed50.jpg" alt="图片">
+          <p>Resolution: 1024x1024; Prompt: “A rabbit is skateboarding in Time Square”</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/1024x1024/4-rank0-iter3-cherry-with-water-splashed-in-all-directions-in-a-bowl. 2.jpg" alt="图片">
+          <p>Resolution: 1024x1024; Prompt: “cherry with water splashed in all directions in a bowl”</p>
+        </div>
+        <!-- <div class="img-txt">
+          <img src="images/SDv2-1/1024x1024/00003-poster-of-a-mechanical-cute-cat.s-seed52.jpg" alt="图片">
+          <p>Resolution: 1024x1024; “poster of a mechanical cute cat”</p>
+        </div> -->
+        <div class="img-txt">
+          <img src="images/SDv2-1/1024x1024/00004-A-rabbit-is-riding-a-bicycle-in-New-York-Street-seed50.jpg" alt="图片">
+          <p>Resolution: 1024x1024; Prompt: “A rabbit is riding a bicycle in New York Street”</p>
+        </div>
+        <div class="img-txt">
+          <img src="images/SDv2-1/2048x2048/45-rank0-iter4-Stack-coins-with-plants-to-grow-into-steps.-business-growth-.jpg" alt="图片">
+          <p>Resolution: 2048x2048; Prompt: “Stack coins with plants to grow into steps”</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="background-color: #ececec;">
+      <br>
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <h3 class="title is-4"><strong>Higher-Resolution Synthsized Images with SD 1.5</h3>
+          <p style="text-align: center"> Utilizing a pretrained model trained on resolution <span style="color: #974EC3;">512 x 512</span>, 
+            our method can generate images with resolution up to with <span style="color: #974EC3;">2048 x 2048</span> <i style="color:#ac354b">without training/optimization</i>. </p>
+          <div id="carousel" class="carousel">
+            <div class="img-txt">
+              <img src="images/sd1-5/2048x2048/A rustic wooden cabin nestled in a snowy forest2.jpg" alt="图片">
+              <p>Resolution: 2048x2048; Prompt: “A rustic wooden cabin nestled in a snowy forest”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/2048x1024/A dog wearing a Superhero outfit with red cape flying through the sky.jpg" alt="图片">
+              <p>Resolution: 2048x1024; Prompt: “A dog wearing a Superhero outfit with red cape flying through the sky”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/2048x1024/A picturesque mountain scene with a clear lake reflecting the surrounding peaks2.jpg" alt="图片">
+              <p>Resolution: 2048x1024; Prompt: “A picturesque mountain scene with a clear lake reflecting the surrounding peaks”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/2048x1024/A squirrel eating an acorn in a forest.jpg" alt="图片">
+              <p>Resolution: 2048x1024; Prompt: “A squirrel eating an acorn in a forest”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A beautiful sunset over a calm ocean with a lighthouse in the distance2.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A beautiful sunset over a calm ocean with a lighthouse in the distance”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A butterfly landing on a sunflower.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A butterfly landing on a sunflower”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A charming raccoon stealthily rummages through a homeowner's trash can.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A charming raccoon stealthily rummages through a homeowner's trash can”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A confused grizzly bear in calculus class.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A confused grizzly bear in calculus class”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A fox peeking out from behind a bush2.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A fox peeking out from behind a bush”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A picturesque mountain scene with a clear lake reflecting the surrounding peaks.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A picturesque mountain scene with a clear lake reflecting the surrounding peaks”</p>
+            </div>
+            <div class="img-txt">
+              <img src="images/sd1-5/1024x1024/A tranquil garden filled with blooming flowers and a small fountain2.jpg" alt="图片">
+              <p>Resolution: 1024x1024; Prompt: “A tranquil garden filled with blooming flowers and a small fountain”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <br>
+      <h3 class="title is-4"><strong>Compare with baselines on Text-to-Panorama Generation</h3>
+        <p style="text-align: center; font-weight: 200;">We generate panorama of resolution 3072 x 512 following SyncDiffusion. 
+          <br> As shown below, our approach generate much more plausible and natural global structures than baselines,
+          <br> which exhibit repetitive semantics (1,2,3,4) and incoherent layout (3,4) issues.
+        </p>
+
+      <div id="carousel" class="carousel" style="width:750px; overflow: hidden;">
+        <div class="baseline-img">
+          <img src="images/comp-panorama/direct-gen/1-rank0-iter0-A-photo-of-a-lake-under-the-northern-lights_seed51_sample0.jpg" alt="图片">
+          <span style="font-size: 10px">1. Direct Inference</span>
+          <img src="images/comp-panorama/attn-sf/1-rank0-iter0-A-photo-of-a-lake-under-the-northern-lights_seed51_sample0.jpg" alt="图片">
+          <span style="font-size: 10px">2. Attention-SF</span>
+          <img src="images/comp-panorama/multi-diff/A photo of a lake under the northern lights.png" alt="图片">
+          <span style="font-size: 10px">3. MultiDiffusion</span>
+          <img src="images/comp-panorama/sync-diff/A photo of a lake under the northern lights.png" alt="图片">
+          <span style="font-size: 10px">4. SyncDiffusion</span>
+          <img src="images/comp-panorama/ours/4-rank3-iter0-A-photo-of-a-lake-under-the-northern-lights_seed54_sample2.jpg" alt="图片">
+          <span style="font-size: 10px">Ours</span>
+          <p>“A photo of a lake under the northern lights”</p>
+        </div>
+        <div class="baseline-img">
+          <img src="images/comp-panorama/direct-gen/2-rank0-iter1-A-beach-with-palm-trees_seed51_sample0.jpg" alt="图片">
+          <span style="font-size: 10px">1.Direct Inference</span>
+          <img src="images/comp-panorama/attn-sf/2-rank0-iter1-A-beach-with-palm-trees_seed51_sample0.jpg" alt="图片">
+          <span style="font-size: 10px">2. Attention-SF</span>
+          <img src="images/comp-panorama/multi-diff/A beach with palm trees.png" alt="图片">
+          <span style="font-size: 10px">3. MultiDiffusion</span>
+          <img src="images/comp-panorama/sync-diff/A beach with palm trees.png" alt="图片">
+          <span style="font-size: 10px">4. SyncDiffusion</span>
+          <img src="images/comp-panorama/ours/14-rank1-iter3-A-beach-with-palm-trees_seed52_sample3.jpg" alt="图片">
+          <span style="font-size: 10px">Ours</span>
+          <p>“A beach with palm trees”</p>
+        </div>
+        <div class="baseline-img">
+          <img src="images/comp-panorama/direct-gen/3-rank0-iter2-A-film-photo-of-a-beachside-street-under-the-sunset_seed51_sample0.jpg" alt="图片">
+          <span style="font-size: 10px">1.Direct Inference</span>
+          <img src="images/comp-panorama/attn-sf/3-rank0-iter2-A-film-photo-of-a-beachside-street-under-the-sunset_seed51_sample0.jpg" alt="图片">
+          <span style="font-size: 10px">2. Attention-SF</span>
+          <img src="images/comp-panorama/multi-diff/A film photo of a beachside street under the sunset.png" alt="图片">
+          <span style="font-size: 10px">3. MultiDiffusion</span>
+          <img src="images/comp-panorama/sync-diff/A film photo of a beachside street under the sunset.png" alt="图片">
+          <span style="font-size: 10px">4. SyncDiffusion</span>
+          <img src="images/comp-panorama/ours/11-rank0-iter10-A-film-photo-of-a-beachside-street-under-the-sunset_seed51_sample0 2.jpg" alt="图片">
+          <span style="font-size: 10px">Ours</span>
+          <p>“A film photo of a beachside street under the sunset”</p>
+        </div>
+      </div>
+    </div>
+      
+    
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
