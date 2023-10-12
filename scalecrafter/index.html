@@ -99,10 +99,17 @@
     </div>
     <!-- <video autoplay muted controls="" loop="" style="height: 75vh; margin: auto; text-align: center;  margin-left: 50px; margin-right: 50px;"> <source src="videos-2k/0189_randk2-seed135.mp4" type="video/mp4"></video> -->
     <div id="carousel" class="carousel carousel-vid" style="overflow: hidden; height:100vh">
-      <div class="img-txt" style="height:75vh">
+      <!-- <div class="img-txt" style="height:75vh">
         <img src="images/sdxl/4096x4096/000.png" alt="图片" style="height:75vh">
         <p>Generated image with resolution of <span style="color:#974EC3">4096 x 4096</span>. 
           <br><span style="font-size: small;">Input: “Spring Magnolia and Thistle bouquet. Featuring bronze magnolia leaves, woodland greeneries, pussywillow, blush, scarlet and pink peonies, cream roses, sea holly thistle and cream, gold and navy ribbons”</span></p>
+      </div> -->
+      <div class="vid-txt">
+        <video autoplay muted controls="" loop="" dth="1000px">
+          <source src="videos-2k/0002_randk0-seed1123.mp4" type="video/mp4">
+        </video>
+        <p>Generated video with resolution of <span style="color:#974EC3">2048 x 1152</span>. 
+          <br><span style="font-size: small;">Input: “a girl in astronaut outfit in the spaceship turning around, cinematic, super detailed face”</span></p>
       </div>
       <div class="vid-txt">
         <video autoplay muted controls="" loop="" dth="1000px">
@@ -110,6 +117,13 @@
         </video>
         <p>Generated video with resolution of <span style="color:#974EC3">2048 x 1152</span>. 
           <br><span style="font-size: small;">Input: “Aerial autumn forest with a river in the mountains”</span></p>
+      </div>
+      <div class="vid-txt">
+        <video autoplay muted controls="" loop="" dth="1000px">
+          <source src="videos-2k/0005_randk1-seed154.mp4" type="video/mp4">
+        </video>
+        <p>Generated video with resolution of <span style="color:#974EC3">2048 x 1152</span>. 
+          <br><span style="font-size: small;">Input: “A beautiful girl on a boat”</span></p>
       </div>
       
     </div>
@@ -135,9 +149,9 @@
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 500; width: 20%;">1. Direct Inference</td>
-            <td style="text-align: center; font-weight: 500; width: 20%;">2. Scaling Attention</td>
-            <td style="text-align: center; font-weight: 500; width: 20%;">3. MultiDiffusion</td>
-            <td style="text-align: center; font-weight: 500; width: 20%;">4. SyncDiffusion</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">2. Scaling Attention <br>[Jin et al. 2023]</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">3. MultiDiffusion<br>[Bar-Tal et al. 2023]</td>
+            <td style="text-align: center; font-weight: 500; width: 20%;">4. SyncDiffusion<br>[Lee et al. 2023]</td>
             <td style="text-align: center; font-weight: 500; width: 20%;">5. <span style="font-weight: 1000;">Ours</span></td>
           </tr>
         </table>
