@@ -112,6 +112,51 @@ h2 {
   font-size: 22px;
 }
 
+h2[id] {
+  scroll-margin-top: 3rem;
+}
+
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  background: #fff;
+  border-bottom: 1px solid #e0e4e8;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+.page-nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 16px;
+  font-size: 14px;
+}
+
+.page-nav a {
+  white-space: nowrap;
+}
+
+#publications-list > tbody {
+  counter-reset: pubidx;
+}
+
+#publications-list > tbody > tr {
+  counter-increment: pubidx;
+}
+
+#publications-list > tbody > tr > td:nth-child(2)::before {
+  content: "[" counter(pubidx) "] ";
+  font-weight: 700;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
 .papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
