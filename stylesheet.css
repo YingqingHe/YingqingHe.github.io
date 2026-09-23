@@ -195,3 +195,46 @@ h2[id] {
 span.highlight {
   background-color: #ffffd0;
 }
+
+.email-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.email-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #1772d0;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.email-toggle:hover,
+.email-toggle:focus,
+.email-toggle[aria-expanded="true"] {
+  color: #f09228;
+}
+
+.email-card {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 8px);
+  transform: translateX(-50%);
+  z-index: 20;
+  min-width: 250px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid #e0e4e8;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: left;
+}
+
+.email-card a {
+  display: block;
+  line-height: 1.8;
+  white-space: nowrap;
+}
