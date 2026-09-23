@@ -143,11 +143,11 @@ h2[id] {
 }
 
 #publications-list > tbody {
-  counter-reset: pubidx;
+  counter-reset: pubidx 25;
 }
 
 #publications-list > tbody > tr {
-  counter-increment: pubidx;
+  counter-increment: pubidx -1;
 }
 
 #publications-list > tbody > tr > td:nth-child(2)::before {
@@ -237,4 +237,12 @@ span.highlight {
   display: block;
   line-height: 1.8;
   white-space: nowrap;
+}
+
+svg.corr {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  margin-left: 0.12em;
+  vertical-align: -0.12em;
 }
